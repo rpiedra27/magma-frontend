@@ -6,7 +6,7 @@ export default function Promos() {
         <div>
             <div class="py-6 mt-5 flex tiny:gap-10 tiny:grid tiny:flex-none tiny:place-content-center">
                 <SideMenu />
-                <ProductGrid url={`${process.env.REACT_APP_API_URL}/combos/`}/>
+                <ProductGrid url={`${process.env.REACT_APP_API_URL}/items/combos/`}/>
             </div>
         </div>
     );

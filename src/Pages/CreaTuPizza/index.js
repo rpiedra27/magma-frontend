@@ -88,7 +88,7 @@ export default function CreaTuPizza() {
       <div className="flex flex-col w-10/12 cel:w-full gap-y-5 justify-center m-auto">
         <IngredientBox title="Tamaño">
           {ingredients &&
-            ingredients.sizes.map((i) => {
+            ingredients.filter((i)=>i.type === "sizes").map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
                   <IngredientInput
@@ -110,7 +110,7 @@ export default function CreaTuPizza() {
         </IngredientBox>
         <ColoredIngredientBox title="Salsas">
           {ingredients &&
-            ingredients.sauces.map((i) => {
+            ingredients.filter((i)=>i.type === "sauces").map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
                   <IngredientInput
@@ -132,7 +132,7 @@ export default function CreaTuPizza() {
         </ColoredIngredientBox>
         <IngredientBox title="Quesos">
           {ingredients &&
-            ingredients.cheeses.map((i) => {
+            ingredients.filter((i)=>i.type === "cheeses").map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
                   <IngredientInput
@@ -154,7 +154,7 @@ export default function CreaTuPizza() {
         </IngredientBox>
         <ColoredIngredientBox title="Carnes">
           {ingredients &&
-            ingredients.meats.map((i) => {
+            ingredients.filter((i)=>i.type === "meats").map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
                   <IngredientInput
@@ -176,7 +176,7 @@ export default function CreaTuPizza() {
         </ColoredIngredientBox>
         <IngredientBox title="Vegetales y Frutas">
           {ingredients &&
-            ingredients.vegetables.map((i) => {
+            ingredients.filter((i)=>i.type === "vegetables").map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
                   <IngredientInput
@@ -198,7 +198,7 @@ export default function CreaTuPizza() {
         </IngredientBox>
         <ColoredIngredientBox title="Extras">
           {ingredients &&
-            ingredients.extras.map((i) => {
+            ingredients.filter((i)=>i.type === "extras").map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
                   <IngredientInput
