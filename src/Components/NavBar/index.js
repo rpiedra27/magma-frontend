@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './navbar.css';
-import Dropdown from './dropdown';
-import {TiShoppingCart} from "react-icons/ti";
-import Mixpanel from '../../Services/mixpanel';
+import "./navbar.css";
+import Dropdown from "./dropdown";
+import { TiShoppingCart } from "react-icons/ti";
+import Mixpanel from "../../Services/mixpanel";
 import { useSelector } from "react-redux";
 
 function Navbar() {
@@ -31,9 +31,13 @@ function Navbar() {
 
   return (
     <>
-      <nav className='navbar'>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img className="h-20 w-20" src='https://ci0137.s3.amazonaws.com/magma/home/logo_magma_pizza.png' alt="Logo"/>
+      <nav className="navbar">
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <img
+            className="h-20 w-30"
+            src="https://ci0137.s3.amazonaws.com/magma/home/logo_magma_pizza.png"
+            alt="Logo"
+          />
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -87,8 +91,7 @@ function Navbar() {
               Contáctenos
             </Link>
           </li>
-          {
-          userState.userIsLoggedIn ? (
+          {userState.userIsLoggedIn ? (
             <li className="nav-item">
               <Link
                 to="/"
@@ -96,27 +99,26 @@ function Navbar() {
                 onClick={() => {
                   setClick(false);
                   Mixpanel.track(Mixpanel.TYPES.CLOSE_SESSION);
-                  userState.logout()
+                  userState.logout();
                 }}
               >
                 Cerrar sesión
               </Link>
             </li>
-            ): (
-              <li className="nav-item">
-                <Link
-                  to="/Login"
-                  className="nav-links"
-                  onClick={() => {
-                    setClick(false);
-                    Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);
-                  }}
-                >
-                  Inicie sesión
-                </Link>
-              </li>
-            )
-          }
+          ) : (
+            <li className="nav-item">
+              <Link
+                to="/Login"
+                className="nav-links"
+                onClick={() => {
+                  setClick(false);
+                  Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);
+                }}
+              >
+                Inicie sesión
+              </Link>
+            </li>
+          )}
           <div className="carrito">
             <li className="nav-item">
               <Link
@@ -124,7 +126,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={() => {
                   setClick(false);
-                  Mixpanel.track(Mixpanel.TYPES.GO_TO_CART);      
+                  Mixpanel.track(Mixpanel.TYPES.GO_TO_CART);
                 }}
               >
                 Carrito
@@ -133,7 +135,7 @@ function Navbar() {
           </div>
         </ul>
         <button
-          className="button ml-20 text-white text-6xl"
+          className="button ml-20 text-white text-6xl hover:bg-dark-red"
           onClick={() => {
             navigate("/Carrito", { replace: true });
             Mixpanel.track(Mixpanel.TYPES.GO_TO_CART);

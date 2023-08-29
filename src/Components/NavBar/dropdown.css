@@ -1,6 +1,6 @@
   .dropdown-menu {
-    background: #E53D00;
-    width: 150px;
+    background: #EF233C;
+    width: 200px;
     position: absolute;
     top: 80px;
     list-style: none;
@@ -8,7 +8,7 @@
   }
   
   .dropdown-menu li {
-    background: #E53D00;
+    background: #EF233C;
     cursor: pointer;
   }
   
@@ -26,7 +26,7 @@
   }
 
   .dropdown-link:hover {
-    color:yellow
+    background: #D90429;
   }
   
   @media screen and (max-width: 1100px) {

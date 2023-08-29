@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Mixpanel from "../../Services/mixpanel";
 
-import './dropdown.css';
+import "./dropdown.css";
 
 function Dropdown() {
   const [click, setClick] = useState(false);
@@ -12,33 +12,67 @@ function Dropdown() {
     <>
       <ul
         onClick={handleClick}
-        className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
+        className={click ? "dropdown-menu clicked" : "dropdown-menu"}
       >
         <li>
-            <Link className='dropdown-link' to='/Pizzas' onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_PIZZAS)}}>
-                Pizza
-            </Link>
-
+          <Link
+            className="dropdown-link"
+            to="/Pizzas"
+            onClick={() => {
+              setClick(false);
+              Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_PIZZAS);
+            }}
+          >
+            Pizzas
+          </Link>
         </li>
         <li>
-            <Link className='dropdown-link' to='/Bebidas' onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_DRINKS);}}>
-                Bebidas
-            </Link>
+          <Link
+            className="dropdown-link"
+            to="/Bebidas"
+            onClick={() => {
+              setClick(false);
+              Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_DRINKS);
+            }}
+          >
+            Bebidas
+          </Link>
         </li>
         <li>
-            <Link className='dropdown-link' to='/Acompanamientos' onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_ACCOMPANIMENTS);}}>
-                Acompañantes
-            </Link>
+          <Link
+            className="dropdown-link"
+            to="/Acompanamientos"
+            onClick={() => {
+              setClick(false);
+              Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_ACCOMPANIMENTS);
+            }}
+          >
+            Acompañamientos
+          </Link>
         </li>
         <li>
-            <Link className='dropdown-link' to='/Postres' onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_DRINKS);}}>
-                Postres
-            </Link>
+          <Link
+            className="dropdown-link"
+            to="/Postres"
+            onClick={() => {
+              setClick(false);
+              Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_DRINKS);
+            }}
+          >
+            Postres
+          </Link>
         </li>
         <li>
-            <Link className='dropdown-link' to='/Promos' onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_PROMOS);}}>
-                Combos y promociones
-            </Link>
+          <Link
+            className="dropdown-link"
+            to="/Promos"
+            onClick={() => {
+              setClick(false);
+              Mixpanel.track(Mixpanel.TYPES.GO_TO_MENU_PROMOS);
+            }}
+          >
+            Combos y promociones
+          </Link>
         </li>
       </ul>
     </>
