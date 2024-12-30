@@ -9,7 +9,7 @@ function GridItemBtn(props) {
   return (
     <div>
       <button
-        className="h-10 w-40 bg-red hover:bg-light-red text-white font-bold py-2 rounded-md shadow-lg"
+        className="h-10 w-40 bg-red hover:bg-dark-red text-white font-bold py-2 rounded-md shadow-lg"
         onClick={() => {
           const product = {
             name: props.name,
@@ -62,7 +62,7 @@ function SideMenuBtn(props) {
     sideBtnClass = "h-14 w-64 bg-yellow text-lg font-bold rounded-md shadow-xl";
   } else {
     sideBtnClass =
-      "h-14 w-64 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md shadow-xl";
+      "h-14 w-64 bg-red hover:bg-dark-red text-white text-lg font-bold rounded-md shadow-xl";
   }
   return (
     <div>

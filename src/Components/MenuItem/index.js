@@ -102,7 +102,7 @@ function HomeItem({ name, image }) {
   return (
     <div className="flex flex-col items-center">
       <img className="w-56 h-56" src={image} alt={name} />
-      <p className="lg:text-xl cel:text-lg text-pizza text-center w-60">
+      <p className="lg:text-xl cel:text-lg text-pizza text-center w-60 mt-1 mb-6">
         {name}
       </p>
     </div>

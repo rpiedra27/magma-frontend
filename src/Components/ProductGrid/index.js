@@ -123,7 +123,7 @@ function HomeProductGrid({ homePizzaUrl, homeComboUrl }) {
       <p className="text-center text-pizza text-3xl cel:text-2xl cel:mx-10 mt-5 mb-10">
         Si no puede decidir ¡Dale un vistazo a nuestras promociones!
       </p>
-      <div className="lg:flex lg:justify-between cel:flex-col lg:mx-36 cel:mx-10 my-10">
+      <div className="lg:flex lg:justify-between flex-wrap cel:flex-col lg:mx-36 cel:mx-10 my-10">
         {comboItems &&
           comboItems.map((i) => {
             return <HomeItem name={i.name} image={i.image} />;

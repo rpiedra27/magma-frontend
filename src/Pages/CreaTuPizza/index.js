@@ -84,139 +84,153 @@ export default function CreaTuPizza() {
     </div>
   ) : (
     <div>
-      <h1 className="text-3xl text-pizza font-semibold text-center my-5">Crea tu propia pizza</h1>
+      <h1 className="text-3xl text-pizza font-semibold text-center my-5">
+        Crea tu propia pizza
+      </h1>
       <div className="flex flex-col w-10/12 cel:w-full gap-y-5 justify-center m-auto">
         <IngredientBox title="Tamaño">
           {ingredients &&
-            ingredients.filter((i)=>i.type === "sizes").map((i) => {
-              return (
-                <IngredientOption text={`${i.label}`}>
-                  <IngredientInput
-                    inputType={"radio"}
-                    ingredientValue={`${i.value}`}
-                    ingredientName={"size"}
-                    ingredientFunction={(evt) => {
-                      handleRadioChange(
-                        setSize,
-                        evt.target.value,
-                        evt.target.name,
-                        i.price
-                      );
-                    }}
-                  />
-                </IngredientOption>
-              );
-            })}
+            ingredients
+              .filter((i) => i.type === "sizes")
+              .map((i) => {
+                return (
+                  <IngredientOption text={`${i.label}`}>
+                    <IngredientInput
+                      inputType={"radio"}
+                      ingredientValue={`${i.value}`}
+                      ingredientName={"size"}
+                      ingredientFunction={(evt) => {
+                        handleRadioChange(
+                          setSize,
+                          evt.target.value,
+                          evt.target.name,
+                          i.price
+                        );
+                      }}
+                    />
+                  </IngredientOption>
+                );
+              })}
         </IngredientBox>
         <ColoredIngredientBox title="Salsas">
           {ingredients &&
-            ingredients.filter((i)=>i.type === "sauces").map((i) => {
-              return (
-                <IngredientOption text={`${i.label}`}>
-                  <IngredientInput
-                    inputType={"radio"}
-                    ingredientValue={`${i.value}`}
-                    ingredientName={"sauce"}
-                    ingredientFunction={(evt) => {
-                      handleRadioChange(
-                        setSauce,
-                        evt.target.value,
-                        evt.target.name,
-                        i.price
-                      );
-                    }}
-                  />
-                </IngredientOption>
-              );
-            })}
+            ingredients
+              .filter((i) => i.type === "sauces")
+              .map((i) => {
+                return (
+                  <IngredientOption text={`${i.label}`}>
+                    <IngredientInput
+                      inputType={"radio"}
+                      ingredientValue={`${i.value}`}
+                      ingredientName={"sauce"}
+                      ingredientFunction={(evt) => {
+                        handleRadioChange(
+                          setSauce,
+                          evt.target.value,
+                          evt.target.name,
+                          i.price
+                        );
+                      }}
+                    />
+                  </IngredientOption>
+                );
+              })}
         </ColoredIngredientBox>
         <IngredientBox title="Quesos">
           {ingredients &&
-            ingredients.filter((i)=>i.type === "cheeses").map((i) => {
-              return (
-                <IngredientOption text={`${i.label}`}>
-                  <IngredientInput
-                    inputType={"radio"}
-                    ingredientValue={`${i.value}`}
-                    ingredientName={"cheese"}
-                    ingredientFunction={(evt) => {
-                      handleRadioChange(
-                        setCheese,
-                        evt.target.value,
-                        evt.target.name,
-                        i.price
-                      );
-                    }}
-                  />
-                </IngredientOption>
-              );
-            })}
+            ingredients
+              .filter((i) => i.type === "cheeses")
+              .map((i) => {
+                return (
+                  <IngredientOption text={`${i.label}`}>
+                    <IngredientInput
+                      inputType={"radio"}
+                      ingredientValue={`${i.value}`}
+                      ingredientName={"cheese"}
+                      ingredientFunction={(evt) => {
+                        handleRadioChange(
+                          setCheese,
+                          evt.target.value,
+                          evt.target.name,
+                          i.price
+                        );
+                      }}
+                    />
+                  </IngredientOption>
+                );
+              })}
         </IngredientBox>
         <ColoredIngredientBox title="Carnes">
           {ingredients &&
-            ingredients.filter((i)=>i.type === "meats").map((i) => {
-              return (
-                <IngredientOption text={`${i.label}`}>
-                  <IngredientInput
-                    inputType={"checkbox"}
-                    ingredientValue={`${i.value}`}
-                    ingredientName={"meat"}
-                    ingredientFunction={(evt) => {
-                      handleCheckboxChange(
-                        meats,
-                        setMeats,
-                        evt.target.value,
-                        i.price
-                      );
-                    }}
-                  />
-                </IngredientOption>
-              );
-            })}
+            ingredients
+              .filter((i) => i.type === "meats")
+              .map((i) => {
+                return (
+                  <IngredientOption text={`${i.label}`}>
+                    <IngredientInput
+                      inputType={"checkbox"}
+                      ingredientValue={`${i.value}`}
+                      ingredientName={"meat"}
+                      ingredientFunction={(evt) => {
+                        handleCheckboxChange(
+                          meats,
+                          setMeats,
+                          evt.target.value,
+                          i.price
+                        );
+                      }}
+                    />
+                  </IngredientOption>
+                );
+              })}
         </ColoredIngredientBox>
         <IngredientBox title="Vegetales y Frutas">
           {ingredients &&
-            ingredients.filter((i)=>i.type === "vegetables").map((i) => {
-              return (
-                <IngredientOption text={`${i.label}`}>
-                  <IngredientInput
-                    inputType={"checkbox"}
-                    ingredientValue={`${i.value}`}
-                    ingredientName={"vegetable"}
-                    ingredientFunction={(evt) => {
-                      handleCheckboxChange(
-                        vegetables,
-                        setVegetables,
-                        evt.target.value,
-                        i.price
-                      );
-                    }}
-                  />
-                </IngredientOption>
-              );
-            })}
+            ingredients
+              .filter((i) => i.type === "vegetables")
+              .map((i) => {
+                return (
+                  <IngredientOption text={`${i.label}`}>
+                    <IngredientInput
+                      inputType={"checkbox"}
+                      ingredientValue={`${i.value}`}
+                      ingredientName={"vegetable"}
+                      ingredientFunction={(evt) => {
+                        handleCheckboxChange(
+                          vegetables,
+                          setVegetables,
+                          evt.target.value,
+                          i.price
+                        );
+                      }}
+                    />
+                  </IngredientOption>
+                );
+              })}
         </IngredientBox>
         <ColoredIngredientBox title="Extras">
           {ingredients &&
-            ingredients.filter((i)=>i.type === "extras").map((i) => {
-              return (
-                <IngredientOption text={`${i.label}`}>
-                  <IngredientInput
-                    inputType={"checkbox"}
-                    ingredientValue={`${i.value}`}
-                    ingredientName={"extra"}
-                    ingredientFunction={(evt) => {
-                      handleCheckboxChange(
-                        extras,
-                        setExtras,
-                        evt.target.value,
-                        i.price
-                      );
-                    }}
-                  />
-                </IngredientOption>
-              );
-            })}
+            ingredients
+              .filter((i) => i.type === "extras")
+              .map((i) => {
+                return (
+                  <IngredientOption text={`${i.label}`}>
+                    <IngredientInput
+                      inputType={"checkbox"}
+                      ingredientValue={`${i.value}`}
+                      ingredientName={"extra"}
+                      ingredientFunction={(evt) => {
+                        handleCheckboxChange(
+                          extras,
+                          setExtras,
+                          evt.target.value,
+                          i.price
+                        );
+                      }}
+                    />
+                  </IngredientOption>
+                );
+              })}
         </ColoredIngredientBox>
         <hr className="border-red" />
         <h2 className="text-2xl text-center">Costo: ₡{price}</h2>
@@ -227,7 +241,8 @@ export default function CreaTuPizza() {
               const product = {
                 name: getPizzaString(),
                 price: price,
-                image: "https://ci0137.s3.amazonaws.com/magma/personalizada/personalizada.png",
+                image:
+                  "https://ci0137.s3.amazonaws.com/magma/personalizada/personalizada.png",
                 alt: "customPizza",
                 size: size,
               };
